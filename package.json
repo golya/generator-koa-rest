@@ -1,0 +1,26 @@
+{
+  "name": "generator-koa-rest",
+  "version": "1.0.0",
+  "description": "generator-koa-rest",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/golya/generator-koa-rest.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Ádám Gólya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/golya/generator-koa-rest/issues"
+  },
+  "homepage": "https://github.com/golya/generator-koa-rest#readme",
+  "files": [
+    "app",
+    "router"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.17.3"
+  }
+}
