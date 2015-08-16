@@ -11,7 +11,7 @@ module.exports.<%= restName %> = function *<%= restName %>() {
     this.body = yield render('<%= restName %>', { '<%= restName %>s': <%= restName %>s });
 };
 
-module.exports.fetch_all = function *list() {
+module.exports.fetch_all = function *fetch_all() {
     this.body = yield <%= restName %>s;
 };
 
