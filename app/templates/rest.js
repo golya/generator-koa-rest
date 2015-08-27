@@ -11,11 +11,11 @@ module.exports.fetch_all = function *fetch_all() {
 };
 
 module.exports.fetch = function *fetch(id) {
-    var <%= restName %> = <%= restName %>[id] || null;
-    if (!<%= restName %>) {
+    var fetched_<%= restName %> = <%= restName %>[id] || null;
+    if (!fetched_<%= restName %>) {
         this.throw(404, '<%= restName %> with id = ' + id + ' was not found');
     }
-    this.body = yield <%= restName %>;
+    this.body = yield fetched_<%= restName %>;
 };
 
 module.exports.create = function *create() {
