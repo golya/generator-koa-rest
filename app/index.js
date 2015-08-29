@@ -12,9 +12,11 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
 
     generateController: function(){
         var context = {
-            restName: this.restname
+            restName: this.restname,
+            restCapitalName: this.restname[0].toUpperCase() + this.restname.slice(1)
         };
         this.template("rest.js", "controllers/"+this.restname+".js", context);
+        this.template("model.js", "model/"+this.restname+".js", context);
         var path = "app.js",
             file = this.readFileAsString(path);
 
