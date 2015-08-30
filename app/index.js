@@ -17,11 +17,12 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
         };
         this.template("rest.js", "controllers/"+this.restname+".js", context);
         this.template("model.js", "model/"+this.restname+".js", context);
+        this.template("spec.js", "test/"+this.restname+"Spec.js", context);
         var path = "app.js",
             file = this.readFileAsString(path);
 
         file += "var "+this.restname+" = require('./controllers/"+this.restname+"');\n";
-        file += "router.get('/"+this.restname+"', "+this.restname+".fetch);\n";
+        file += "router.get('/"+this.restname+"', "+this.restname+".fetch_all);\n";
 
         this.write(path, file);
     }
