@@ -1,7 +1,7 @@
 'use strict';
 var superagent = require('supertest');
 var assert = require('assert');
-var app = require('../app');
+var app = require('../server');
 
 var userAgent = superagent.agent(app.listen());
 
