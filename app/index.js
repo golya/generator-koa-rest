@@ -18,7 +18,7 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
         this.template("rest.js", "controllers/"+this.restname+".js", context);
         this.template("model.js", "model/"+this.restname+".js", context);
         this.template("spec.js", "test/"+this.restname+"Spec.js", context);
-        var path = "app.js",
+        var path = "server.js",
             file = this.readFileAsString(path);
 
         file += "var "+this.restname+" = require('./controllers/"+this.restname+"');\n";
