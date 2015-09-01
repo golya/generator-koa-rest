@@ -22,7 +22,7 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
             file = this.readFileAsString(path);
 
         file += "var "+this.restname+" = require('./controllers/"+this.restname+"');\n";
-        file += "router.get('/"+this.restname+"', "+this.restname+".fetch_all);\n";
+        file += "router.get('/"+this.restname+"', auth.authed, "+this.restname+".fetch_all);\n";
 
         this.write(path, file);
     }
