@@ -12,6 +12,7 @@ describe('<%= restCapitalName %>', function () {
                 .get('/<%= restName %>')
                 .expect(200)
                 .end(function(err, result) {
+                    assert(result.status, 200);
                     done();
                 })
         });
