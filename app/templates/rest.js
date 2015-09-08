@@ -14,5 +14,7 @@ module.exports.fetch = function *fetch(id) {
 };
 
 module.exports.create = function *create() {
-    <%= restName %>.id = <%= restCapitalName %>.save();
+    new <%= restCapitalName %>({
+        name: test,
+    }).save();
 };
