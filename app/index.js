@@ -8,6 +8,7 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
     constructor: function () {
         yeoman.Base.apply(this, arguments);
         this.argument('restname', { type: String, required: true });
+        this.argument('ignoremodel', { type: String, required: true, default: true });
     },
 
     generateController: function(){
@@ -23,7 +24,9 @@ var KoaRestGenerator = yeoman.generators.Base.extend({
         file += "router.get('/"+this.restname+"', auth.authed, "+this.restname+".fetch_all);\n";
 
         this.template("rest.js", "controllers/"+this.restname+".js", context);
-        this.template("model.js", "model/"+this.restname+".js", context);
+        if (!this.ignoremodel) {
+            this.template("model.js", "model/" + this.restname + ".js", context);
+        }
         this.template("spec.js", "test/"+this.restname+"Spec.js", context);
 
         this.write(path, file);
