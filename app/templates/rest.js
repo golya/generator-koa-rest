@@ -1,5 +1,6 @@
 'use strict';
 var <%= restCapitalName %> = require("../model/<%= restName %>");
+var mysqldb = require('../mysqldb/');
 
 module.exports.fetch_all = function *fetch_all() {
     this.body = yield <%= restCapitalName %>.find({});
