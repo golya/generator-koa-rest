@@ -16,6 +16,6 @@ module.exports.fetch = function *fetch() {
 
 module.exports.create = function *create() {
     var <%= restName %> = yield new <%= restCapitalName %>({
-        name: test
+        name: 'test'
     }).save();
 };
