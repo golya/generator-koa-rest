@@ -7,11 +7,7 @@ module.exports.fetch_all = function *fetch_all() {
 };
 
 module.exports.fetch = function *fetch() {
-    var fetched_<%= restName %> = yield <%= restCapitalName %>.findOne({_id: this.params.id}) || null;
-    if (!fetched_<%= restName %>) {
-        this.throw(404, '<%= restCapitalName %> with id = ' + id + ' was not found');
-    }
-    this.body = fetched_<%= restName %>;
+    this.body = yield <%= restCapitalName %>.findOne({_id: this.params.id}) || null;
 };
 
 module.exports.create = function *create() {
